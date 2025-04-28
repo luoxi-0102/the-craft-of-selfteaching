@@ -1,0 +1,7 @@
+git clone --下载代码到本地
+git status --查看本地仓库的git状态
+git add --添加本地改动到下一次commit
+git commit --提交本次commit到本地仓库
+git push --提交本地仓库改动的commit list 到github的远程仓库中：origin master
+上传不成功的话，请用一行，git config --global --get http.proxy，再试一试
+git add --可以加一个.表示整个目录
