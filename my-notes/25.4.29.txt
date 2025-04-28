@@ -1,0 +1,15 @@
+学习内容：如何证明你真的读过这本书？
+
+anaconda 的安装配置
+jupyter lab的安装和打开
+
+在打开终端的时候，需要先更改一下默认的文件夹
+    D:  #因为teachself的文件夹在D盘里
+    cd D:\teachself\the-craft-of-selfteaching  #打开teachself的文件夹
+    jupyter lab   #用jupyterlab打开这个文件
+
+jupyter学习内容：
+拖拉文件到控制面板，有很多面板格式可以选择，习惯地把文章内容在左，笔记在右
+但目前还只学会了txt的笔记创建，后续还需要再学习一下jupyter的具体教程，然后再开始继续往后进行阅读
+
+笔记写完后，记得保存再退出
