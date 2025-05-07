@@ -22,4 +22,49 @@ Part1-C
 
 或许我可以在公众号更新我的学习之路。
 
+Part1-D
+第一部分内容概括：
+1.布尔值
+2.值的分类与运算
+3.流程控制原理
+4.函数的基本构成
+5.字符串操作
+6.各种容器的基础操作
+7.文件的读写操作
+目的：脱盲——了解定义、有能力阅读部分官方的文档、看懂一些简单代码
+
+阅读策略：
+不要试图一次全部弄懂（如何应对过早引用的文章可以反复阅读）
+
+Part1-E-1
+一、布尔值：用False和True来表示
+1==2  # ==是等于的意思
+1！=2 # ！=是不等于的意思
+
+二、用ai翻译了一下这段代码的意思
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = "all"
+通常情况下，代码中最后只会输出最后一个数据的最终结果，而这段代码，能够把中间值的结果也生成出来（但只在ipython和jupyter中生效）
+通过ai配置成功！！！
+
+具体操作步骤：
+1.下载vs code（因为需要用到code代码）
+2.打开终端，输入ipython profile create（定位配置文件）
+3.在文件中找到profile_default/ipython_config.py文件位置（一般都在C:\Users\luoxi（自己的用户名）\.ipython\profile_default/ipython_config.py），使用vs code打开这个文件
+4.打开文件后，会发现文件里有一堆代码内容，且代码开头是c = get_config()，即为正确，下滑到最后一行，添加c.InteractiveShell.ast_node_interactivity = "all"代码进去
+5.关闭所有jupyter lab和终端内容，再重启即可
+6.在jupyter lab中测试运行结果
+
+三、逻辑操作符（也可以说是比较操作符）
+== 等于
+！= 不等于
+> 大于
+>= 大于等于
+< 小于
+<= 小于等于
+in 属于  "a" in "basic"
+
+
+
+
 
