@@ -1,0 +1,79 @@
+Part1-E-2
+一、学习
+（1）值与运算
+if：什么情况下运算什么
+for：什么情况下重复运算什么
+
+abs（） 返回绝对值
+int（） 返回整数部分
+float（） 返回整数的浮点数形式（例如：输入3，输出为3.0）
+str() 字符串
+bool（） 布尔值
+range（） 范围
+list [] 列表是一个有序的、可变的集合，允许重复元素
+tuple () 元组是一个有序的、不可变的集合，允许重复元素
+set {} 集合是一个无序的、可变的集合，不允许重复元素
+dict {} 字典是一个无序的、可变的集合，由键值对组成
+
+值的类型：布尔值、数字、字符串
+字符串和数字的区别：数字就是数字，而字符串要用“”括起来，储存的是字符信息，但也可以运算（如下）
+s1 = "Hello"
+s2 = "World"
+print(s1 + " " + s2)  # "Hello World"
+print(s1 * 3)         # "HelloHelloHello"
+但是只要相同的值类型，才能进行运算，否则会报错（所以运算前要进行类型转换）
+字符串转数字：float（）、int（）
+数字转字符串：str（）
+type（）：可以用来查看某个值属于什么类型
+
+（2）操作符
+数值操作符：幂的优先级最高、对单个值的正负操作次之、乘除商余再次之、最后加减
+布尔值操作符：not>and>or
+逻辑操作符：大于、小于、等于、不等于  会返回布尔值
+数值>逻辑>布尔值（优先级决定了操作的执行顺序，但结果的类型取决于具体操作符和操作数）
+
+字符串操作符：
+拼接： +、“ ”（这是空格）
+拷贝：*
+逻辑运算：in、not in、以及大于、小于、等于、不等于（除了等于和不等于，其他字符也可以进行运算，字符比较的是它们自身对应的unicode码，大写字母一般码都在小写字母后面，所以都小于小写字母）
+
+列表操作符：用于处理批量的数字或字符 array数组
+list[] 列表：属于有序容器，所以和字符串的操作符相同
+注：一般情况下：一个list中的元素可以不相同，但是两个list进行比较的时候，进行有序比较的两个元素类型要相同（特殊情况：字符串和整数的比较是基于它们的ASCII码值。数字的ASCII码值小于字母的ASCII码值，所以 "3" > 3 为 True）
+
+复杂运算：调用函数、标准库完成运算（不需要着急，都会慢慢学习到的）
+divmod() 计算商和余数
+import math #调用math模块
+math.sin(5) #把5传递给math中的sin函数，进行运算，再返回结果
+float.as_integer_ratio() #将浮点数转换为最简分数形式，返回的是两个值，分子和分母，比如输入3.5，返回值就会是（7，2）
+
+补充：
+每个变量或者常量，除了它们的值之外，同时还相当于有一个对应的布尔值。（空对象、零数值以及 None 和 False 会被视为 False；非空则是True）
+dictionary（）就是上面的dict{}
+Date type（）由 datetime 模块处理。常见的日期类型包括 date、time、datetime 和 timedelta，它们分别表示日期、时间、日期时间组合和时间间隔
+
+
+二、词汇
+evaluation 运算
+control flow 流程控制
+literals 常量
+variables 变量
+operators 操作符
+Boolean value 布尔值
+complex numbers 复数
+strings 字符串
+type casting 类型转换
+array 数组
+
+三、概念
+值、各种类型的操作符、运算逻辑
+函数、其他模块函数
+
+四、暂存链接
+关于表达式：https://docs.python.org/3/reference/expressions.html
+关于所有操作的优先级：https://docs.python.org/3/reference/expressions.html#operator-precedence
+上一条链接不懂 BNF 的话根本读不懂：https://en.wikipedia.org/wiki/Backus-Naur_form
+Python 的内建函数：https://docs.python.org/3/library/functions.html
+Python 的标准数据类型：https://docs.python.org/3/library/stdtypes.html
+Python 内部的函数：
+https://docs.python.org/3.7/library/operator.html
