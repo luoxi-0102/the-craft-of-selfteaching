@@ -1,0 +1,119 @@
+Part1-E-3
+一、学习
+（1）if语句
+if expression
+    statements
+如果expression返回值为真，那么就运算statements；如果返回不为真，那么这个语句就不执行。
+
+if expression:
+    statements_for_True
+else:
+    statements_for_False
+无论expression是真或假，都进行运行
+
+如果返回值有多种情况：
+import random
+r = random.randrange(0, 13)
+
+if r == 7:
+    print('Draw!')
+elif r < 7:
+    print('Small!')
+elif r > 7:
+    print('Big!')
+
+（2）for循环
+for a in range(10):
+    print(f'value of a: {a}') #每次 a 的值都不同，从 0 递增至 9
+ f'value of a: {a}' 是一个格式化的字符串（f-string），其中 {a} 会被变量 a 的当前值替换。
+
+（3）range函数
+range(stop)
+range(start, stop[, step])
+
+range（n）的返回数列中不包含n，默认值是从0开始传递
+
+第三个参数可选；step，步长。相当于等差数列的差
+for i in range(1, 10, 2):
+    print(i)
+1、3、5、7、9
+
+（4）Continue、Break 和 Pass
+用于控制流程走向
+continue 语句将忽略其后的语句开始下次循环
+break 语句将从此结束当前循环，开始执行循环之后的语句
+for语句也可以添加else，在没有break的情况下运行
+pass 当你写程序的时候，你可以用 pass 占位，而后先写别的部分，过后再回来补充本来应该写在 pass 所在位置的那一段代码。（嵌套常用）
+
+（5）while循环
+比for更加灵活
+掷骰子赌大小程序（需要再进行一次细节处理）
+
+from random import randrange #导入random中的randrange函数，用于生成指定范围内的随机整数
+
+#设置初始变量
+coin_user, coin_bot = 10, 10 # 可以用一个赋值符号分别为多个变量赋值，初始金币数
+rounds_of_game = 0 # 记录游戏轮数
+
+def bet(dice, wager):    # 定义bet，接收两个参数，一个是骰子点数，另一个用户的输入
+    if dice == 7:
+        print(f'The dice is {dice};\nDRAW!\n') # \n 是换行符号
+        return 0
+    elif dice < 7:
+        if wager == 's':
+            print(f'The dice is {dice};\nYou WIN!\n')
+            return 1
+        else:
+            print(f'The dice is {dice};\nYou LOST!\n')
+            return -1
+    elif dice > 7:
+        if wager == 's':
+            print(f'The dice is {dice};\nYou LOST!\n')
+            return -1
+        else:
+            print(f'The dice is {dice};\nYou WIN!\n')
+            return 1
+
+while True:         #  除 for 之外的另外一个循环语句，游戏的主循环，无限循环，直到break
+
+    print(f'You: {coin_user}\t Bot: {coin_bot}')  #打印当前的金币数量，\t 是水平制表符，用于对齐输出。
+
+    dice = randrange(2, 13)   # 生成一个 2 到 12 的随机数，模拟骰子结果
+
+    wager = input("What's your bet? ") #提示用户输入选择
+
+    if wager == 'q':
+        break 
+
+    elif wager in 'bs':  # 只有当用户输入的是 b 或者 s 得时候，才 “掷骰子”……
+        result = bet(dice, wager) # 调用bet函数，并返回结果
+        coin_user += result    # coin_user += result 相当于 coin_user = coin_user + result
+        coin_bot -= result # 用用户的结果，更新机器人的金币数量
+        rounds_of_game += 1 # 游戏轮数+1
+    if coin_user == 0:
+        print("Woops, you've LOST ALL, and game over!")
+        break
+    elif coin_bot == 0:
+        print("Woops, the robot's LOST ALL, and game over!")
+        break
+   
+print(f"You've played {rounds_of_game} rounds.\n")
+print(f"You have {coin_user} coins now.\nBye!") # 输出游戏轮数和最终金币数量，程序结束
+
+
+二、词汇
+expression 表达；表情；说法；压榨；“表达式”；表现；运算式
+statements 声明；贷借对照表；(财务)报告书；供述；“语句”；陈述；叙述
+bet 打赌；确信；赌金；下注的对象；可能性
+
+三、概念
+只处理一种情况，用 if ... 
+处理 True/False 两种情况，用 if ... else ...
+处理多种情况，用 if ... elif ... elif ... else ...
+迭代有序数据类型，用 for ... in ...，如果需要处理没有 break 发生的情况，用 for ... else ...
+其它循环，用 while ...
+与循环相关的语句还有 continue、break、pass
+函数从控制流角度去看其实就是子程序
+
+四、暂存链接
+无
