@@ -1,0 +1,103 @@
+Part1-E-4
+【25.6.1 / 12：45——1：40 / 1h】
+一、学习
+（1）函数
+可被调用的完整程序。（学会如何阅读理解函数使用说明，最开始不理解也没关系）
+
+
+（2）print（）
+作用：把传递给它的值，输出到屏幕
+
+（）内各参数如果用【，】隔开，那么输出的结果，将会用空格进行分开
+print(520,1314,521)
+520 1314 521
+
+将变量或表达式插入字符串中，用f-string
+name = "ann"
+age = "22"
+print(f"{name} is {age} years old.")
+ann is 22 years old.
+{}中是表达式，最后print的内容是花括号内的内容，而非表达式本身
+
+print官方文档内容：print(*object, sep=' ', end='\n', file=sys.stdout, flush=False)
+先理解=部分内容
+sep=“ ”   多个参数，输出时分隔符号默认为空格（可以将空格自定义为任何链接符号）
+end=“\n”   输出行的末尾默认为换行符号（如果是\t则是不换行）
+file=sys.stdout   默认输出对象为sys.stdout（我的使用屏幕，可以更改为打开的文件对象）
+这些都是默认存在的
+
+print（print（1））
+最后返回值是
+1
+none
+因为第一次print（1）的输出是 1 + \n ，然后返回一个none，第二次再返回，那么输出的就是none
+
+
+（3）关键字参数
+带有默认值的参数。
+
+举例：stored（）函数
+官方文档：sorted(iterable, *, key=None, reverse=False)
+iterable：可迭代对象，要排序的序列（如列表、元组、集合等）。
+key：（可选参数）指定一个函数，用于从可迭代对象的每个元素中提取用于排序的键。默认为 None，即直接对元素本身进行比较。（比如len，按照字母长度排序）
+reverse：（可选参数）布尔值。如果为 True，排序结果将按降序排列；默认为 False，即升序排列。
+
+
+（4）位置参数
+由位置决定其值的参数。
+
+divmod（）
+必须接收两个参数，第一个参数是被除数，第二个参数是除数，然后输出结果，也是两个，第一个是商，第二个是余
+divmod(11,3)
+(3, 2)
+
+
+（5）可选位置参数
+pow（）  用于计算幂次方
+两种用法：pow（x，y） x的y次幂
+pow（x，y，z）  x的y次幂后，再除以z，最后输出结果是余数
+
+exec（）
+官方文档：exec（object[,globals[,locals]]）
+方括号的含义，不在方括号内的object是必须提供的函数，如果有第二个参数，会被认为是globals，如果有第三个参数，那么会被认定为locals（必须要有第二个globals，才能指定locals）
+
+
+（6）可接收很多值的位置参数
+print官方文档内容：print(*object, sep=' ', end='\n', file=sys.stdout, flush=False)
+第一个就是位置参数 *object 说明这个位置可以接收很多参数。一般来说一个函数最多只有一个这种接收多个值的位置参数
+
+如果函数中有多个位置参数，那么接收很多值的位置参数，需要放在最后
+max（arg1，arg2，*args[，key]） 用于返回给定参数中的最大值。
+
+
+（7）class函数
+class bool（[x]）输出布尔值true或者false
+
+二、词汇
+stdout 标准输出；标准输出设备；标准输出流
+pow 爆炸声；【网络】次方；计算次方值；战俘(prisoner of war)
+divmod 【网络】整除与余数
+Legend  【网络】图例；联想；传奇机
+n.传说；传奇故事；（尤指某领域中的）传奇人物；解释
+
+三、概念
+函数
+print（）
+stored（）
+divmod（）
+pow（）
+exec（）
+max（）
+class bool（）
+
+四、暂存链接
+最早反复阅读查询的页面肯定是其中的这两个：
+https://docs.python.org/3/library/functions.html
+https://docs.python.org/3/library/stdtypes.html
+学会使用 Python，你以后最常访问的页面一定是这个：
+https://docs.python.org/3/library/index.html
+
+
+额外处理区间：
+关于学习记录，在想要不要以某一个part为界限去处理发布，然后前面配上一段时间的记录（可以是跨天、可以是一天完成一两个part，但需要有个具体的时间几小时完成了这个part，让自己对整体数据有个感知）
+或许我还可以把自己的学习内容（公众号的文章）发给ai，让ai帮助我来巩固我的记忆和学习内容
